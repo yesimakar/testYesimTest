@@ -36,6 +36,17 @@
             v-bind:style="{'color':'#4285f4','width':'','height':'','zIndex':9,'fontSize':'23','maxWidth':'','minWidth':'','tabIndex':'-1','fontStyle':'normal','marginTop':'0px','maxHeight':'','minHeight':'','textAlign':'left','fontFamily':'Roboto-Regular,Roboto','fontWeight':'normal','lineHeight':'1.4','marginLeft':'0px','paddingTop':'0px','textShadow':'','marginRight':'0px','paddingLeft':'0px','marginBottom':'0px','paddingRight':'0px','paddingBottom':'0px','textDecoration':'none'}"/>
         </SectionContainer>
       </LinkContainer>
+      <WCalendar v-bind:fade="false" text="Text Content 1" theme="theme--light01" ImgAlt="Blank Image 1"
+        v-bind:noWrap="false" caption="Carousel 1" v-bind:noTouch="false"
+        imageUrl="https://picsum.photos/500/250/?image=1082" v-bind:interval="5000" v-bind:isEnabled="true"
+        background="" blankColor="#ababab" v-bind:indicators="false" secondText="Text Content 2"
+        v-bind:noAnimation="false" ncTypography="body2" v-bind:noHoverPause="false" secondImgAlt="Blank Image 2"
+        secondCaption="Carousel 2"
+        v-bind:nucalDataModel="{'type':'NSW','isList':false,'dynamic':false,'structure':[{'type':'string','propName':'imageUrl','displayName':'ImageUrl'},{'type':'string','propName':'secondImageUrl','displayName':'SecondImageUrl'}]}"
+        secondImageUrl="https://picsum.photos/500/250/?image=1002" ncClickBorderColor="black" ncHoverBorderColor="black"
+        dataModelForDynamicType="string" position="absolute" top="7.738607050730868%" left="12.794117647058824%"
+        v-bind:snapX="false" v-bind:snapY="false" id="f7975364-5997-4bd6-ae1e-cd138d9c970b"
+        v-bind:style="{'width':'','height':'','fontSize':'12px','maxWidth':'','minWidth':'','boxShadow':'','fontStyle':'normal','marginTop':'0px','maxHeight':'','minHeight':'','fontFamily':'OpenSans-Bold,Open Sans','marginLeft':'0px','paddingTop':'0px','textShadow':'','visibility':'visible','marginRight':'0px','paddingLeft':'0px','marginBottom':'0px','paddingRight':'0px','paddingBottom':'0px','borderTopWidth':'0px','borderLeftWidth':'0px','borderRightWidth':'0px','borderBottomWidth':'0px','borderTopLeftRadius':'0px','borderTopRightRadius':'0px','borderBottomLeftRadius':'0px','borderBottomRightRadius':'0px','zIndex':6}"/>
     </NucGridCell>
   </NucGridPage>
 </template>
