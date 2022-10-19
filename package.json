@@ -1,0 +1,179 @@
+{
+  "name": "nucal-ui-application",
+  "version": "0.1.0",
+  "description": "NUCAL frontend application",
+  "scripts": {
+    "setup": "npm install && vue-cli-service lint --fix",
+    "lint": "vue-cli-service lint",
+    "fix": "eslint --fix .",
+    "build:static": "vue-cli-service build --mode production.web --env.production --env.web --dest ../platform/static/",
+    "build:static:dev": "vue-cli-service build --mode development.web --env.development --env.web --dest ../platform/static/",
+    "build:web": "vue-cli-service build --mode production.web --env.production --env.web",
+    "serve:web": "vue-cli-service serve --mode development.web --env.development --env.web",
+    "setup-webpack-config": "node ./node_modules/vue-cli-plugin-vuexp/lib/scripts/webpack-maintenance pre",
+    "version-check": "vue -V && nativescript --version && pod --version && npm -v && node -v && tns --version && xcodebuild -version",
+    "remove-webpack-config": "node ./node_modules/vue-cli-plugin-vuexp/lib/scripts/webpack-maintenance post"
+  },
+  "dependencies": {
+    "axios": "0.19.0",
+    "core-js": "3.3.2",
+    "lodash-es": "4.17.15",
+    "nativescript-fonticon": "2.0.0",
+    "nativescript-vue": "2.2.0",
+    "nativescript-websockets": "1.5.3",
+    "nucal-activity-lib": "1.6.5",
+    "nucal-flow-error-lib": "0.2.1",
+    "nucal-widget-lib": "0.11.0",
+    "redux": "4.0.1",
+    "redux-logger": "3.0.6",
+    "redux-saga": "1.0.2",
+    "tns-core-modules": "6.3.2",
+    "uuid": "3.3.3",
+    "vue": "^2.6.6",
+    "vue-cli-plugin-vuexp": "^0.1.2",
+    "vuex": "^3.0.1",
+    "vuexp": "0.3.0",
+    "vuexp-fonticon": "^0.2.0",
+    "vuexp-router": "0.0.1-alpha.4"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "7.10.4",
+    "@babel/preset-env": "7.4.1",
+    "@babel/traverse": "7.4.0",
+    "@vue/cli-plugin-babel": "4.0.5",
+    "@vue/cli-plugin-e2e-nightwatch": "4.0.5",
+    "@vue/cli-plugin-eslint": "4.0.5",
+    "@vue/cli-plugin-unit-mocha": "4.0.5",
+    "@vue/cli-service": "4.0.5",
+    "@vue/eslint-config-airbnb": "4.0.0",
+    "@vue/eslint-config-prettier": "4.0.1",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.5",
+    "chai": "4.1.2",
+    "copy-webpack-plugin": "5.0.3",
+    "cross-env": "5.2.0",
+    "cross-fetch": "3.0.3",
+    "eslint": "5.8.0",
+    "eslint-plugin-vue": "5.0.0",
+    "geckodriver": "1.16.2",
+    "lint-staged": "8.1.7",
+    "nativescript-dev-webpack": "1.0.1",
+    "nativescript-vue-template-compiler": "2.2.0",
+    "nativescript-worker-loader": "~0.9.5",
+    "node-sass": "4.13.0",
+    "nyc": "14.1.1",
+    "rimraf": "2.6.3",
+    "sass-loader": "8.0.0",
+    "sinon": "7.3.2",
+    "string-replace-loader": "2.1.1",
+    "vue-template-compiler": "^2.5.21",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb",
+      "@vue/prettier"
+    ],
+    "rules": {
+      "import/no-extraneous-dependencies": 0,
+      "import/prefer-default-export": 0,
+      "import/no-cycle": 0,
+      "no-console": 1,
+      "import/extensions": 0,
+      "global-require": 0,
+      "eol-last": 0,
+      "no-param-reassign": 0,
+      "object-curly-newline": 0,
+      "no-plusplus": 0,
+      "max-len": [
+        2,
+        {
+          "code": 160
+        }
+      ],
+      "prefer-destructuring": [
+        2,
+        {
+          "object": true,
+          "array": false
+        }
+      ]
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 160,
+    "trailingComma": "all"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "eslintIgnore": [
+    "webpack.config.js"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "nativescript": {
+    "id": "com.nurd.nucal.feapptemplate",
+    "tns-ios": {
+      "version": "6.0.1"
+    },
+    "tns-android": {
+      "version": "6.0.0"
+    }
+  },
+  "nyc": {
+    "check-coverage": false,
+    "lines": 30,
+    "statements": 30,
+    "functions": 30,
+    "branches": 30,
+    "include": [
+      "src/**/*.js",
+      "src/**/*.vue"
+    ],
+    "exclude": [
+      "src/**/*.native.js",
+      "src/**/*.native.vue",
+      "src/**/*.android.js",
+      "src/**/*.android.vue",
+      "src/**/*.ios.js",
+      "src/**/*.ios.vue"
+    ],
+    "instrument": false,
+    "sourceMap": false,
+    "all": true,
+    "reporter": [
+      "lcov",
+      "html",
+      "text",
+      "text-summary"
+    ]
+  }
+}
+
